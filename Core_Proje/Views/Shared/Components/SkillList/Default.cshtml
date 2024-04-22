@@ -1,0 +1,32 @@
+﻿@using EntityLayer.Concrete
+@model List<Skill>
+
+<div class="section px-3 px-lg-4 pt-5" id="skills">
+    <div class="container-narrow">
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">Yeteneklerim</h2>
+        </div>
+        <div class="text-center">
+            <p class="mx-auto mb-3" style="max-width:600px">
+                Yeteneklerimle dolu bir profesyonel olarak, iletişim ve işbirliğinde üst düzeyde yetkinlik göstermekteyim. Güçlü liderlik becerilerim sayesinde takım çalışmalarında etkili bir rol üstlenir, farklı bakış açılarını birleştirerek ortak hedeflere odaklanırım. Karmaşık sorunları çözme konusundaki analitik düşünce yapım, verileri etkili bir şekilde değerlendirme ve stratejik çözüm yolları geliştirme yeteneklerimi vurgular. Yaratıcı düşünce süreçlerim ve inovasyona olan açıklığım, projelerime benzersiz bir perspektif katmama ve sürekli olarak gelişen sektör trendlerini takip etmeme olanak tanır.
+            </p>
+        </div>
+        <div class="bg-light p-3">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+            <div class="col-md-6">
+
+                <div class="py-1">
+                    <div class="d-flex text-small fw-bolder"><span class="me-auto">@item.Title</span><span>@item.Value%</span></div>
+                    <div class="progress my-1">
+                        <div class="progress-bar bg-primary" role="progressbar" data-aos="zoom-in-right" data-aos-delay="100" data-aos-anchor=".skills-section" style="width:@item.Value%" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+
+            </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
